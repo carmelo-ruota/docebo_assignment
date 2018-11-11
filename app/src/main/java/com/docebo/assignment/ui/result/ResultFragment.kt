@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.docebo.assignment.R
 import com.docebo.assignment.R.layout
 import com.docebo.assignment.base.BaseFragment
 import com.docebo.assignment.data.NetworkCatalogRepository
@@ -14,6 +15,7 @@ import com.docebo.assignment.data.model.Catalog
 import com.docebo.assignment.ui.adapters.CatalogAdapter
 import com.docebo.assignment.ui.adapters.OnLoadMoreListener
 import kotlinx.android.synthetic.main.fragment_result.recycler_results
+import kotlinx.android.synthetic.main.fragment_result.text_total
 
 
 class ResultFragment : BaseFragment(), ResultInteractor.View {
@@ -51,6 +53,7 @@ class ResultFragment : BaseFragment(), ResultInteractor.View {
     }
 
     override fun setCount(count: Int) {
+        text_total.setText(String.format("%s: %d",getString(R.string.total),count))
     }
 
     override fun setData(data: List<Catalog>) {
