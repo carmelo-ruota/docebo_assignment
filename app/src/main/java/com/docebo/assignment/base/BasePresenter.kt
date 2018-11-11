@@ -1,6 +1,14 @@
 package com.docebo.assignment.base
 
-interface BasePresenter<V : BaseView> {
-    fun onAttach()
-    fun onDetach()
+open class BasePresenter(view: BaseView) {
+
+    private var isAttached = false
+
+    fun onAttach() {
+        isAttached = true
+    }
+
+    fun onDetach() {
+        isAttached = false
+    }
 }
