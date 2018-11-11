@@ -13,6 +13,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.docebo.assignment.R
 import com.docebo.assignment.R.layout
 import com.docebo.assignment.base.BaseFragment
+import com.docebo.assignment.data.NetworkCatalogRepository
 import kotlinx.android.synthetic.main.fragment_search.button_search
 import kotlinx.android.synthetic.main.fragment_search.edit_name
 import kotlinx.android.synthetic.main.fragment_search.spinner_type
@@ -20,7 +21,7 @@ import kotlinx.android.synthetic.main.fragment_search.spinner_type
 
 class SearchFragment : BaseFragment(), SearchInteractor.View {
 
-    var presenter: SearchPresenter = SearchPresenter(this, null)
+    private var presenter: SearchPresenter = SearchPresenter(this, NetworkCatalogRepository.instance)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
