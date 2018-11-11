@@ -1,14 +1,14 @@
-package com.docebo.assignment.ui
+package com.docebo.assignment.ui.search
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.docebo.assignment.R.layout
+import com.docebo.assignment.base.BaseFragment
 
 
-class SearchFragment : Fragment() {
+class SearchFragment : BaseFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {

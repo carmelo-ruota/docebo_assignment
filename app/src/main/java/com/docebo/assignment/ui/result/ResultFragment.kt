@@ -1,4 +1,4 @@
-package com.docebo.assignment.ui
+package com.docebo.assignment.ui.result
 
 import android.os.Bundle
 import android.view.LayoutInflater
