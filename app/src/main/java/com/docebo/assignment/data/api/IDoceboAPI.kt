@@ -7,6 +7,6 @@ import retrofit2.http.Query
 
 interface IDoceboAPI {
     @GET("catalog")
-    fun getCatalog(@Query("type") type: String, @Query("search_text") search_text: String,@Query("page") page: Int): Observable<BaseResponse<Data>>
+    fun getCatalog(@Query("type[]") type: String, @Query("search_text") search_text: String,@Query("page") page: Int): Observable<BaseResponse<Data>>
 
 }

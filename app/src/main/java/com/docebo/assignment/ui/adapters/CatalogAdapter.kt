@@ -29,16 +29,22 @@ class CatalogAdapter(items: ArrayList<Catalog?>, listener: ((Catalog?, Int) -> U
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = when (holder) {
         is CatalogViewHolder -> holder.bind(items[position]!!, listener)
         is LoadingViewHolder -> holder.bind()
-        else -> {}
+        else -> {
+        }
     }
 
 
     class CatalogViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: Catalog, listener: ((Catalog, Int) -> Unit)?) = with(itemView) {
-            Glide.with(itemView.context).load(String.format("%s:%s","https",item.item_thumbnail)).into(image_catalog)
+
+            if (item.item_thumbnail.isNotEmpty()) {
+                Glide.with(itemView.context).load(String.format("%s:%s", "https", item.item_thumbnail)).into(image_catalog)
+            } else {
+                Glide.with(itemView.context).load(R.mipmap.ic_launcher).into(image_catalog)
+            }
             text_name.text = item.item_name
             text_type.text = item.course_type
-            text_price.text = String.format(Locale.getDefault(),"%s €",item.item_price)
+            text_price.text = String.format(Locale.getDefault(), "%s €", item.item_price)
             //TODO replace deprecated function
             text_description.text = Html.fromHtml(item.item_description)
         }
