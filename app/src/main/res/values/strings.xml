@@ -2,6 +2,7 @@
     <string name="app_name">Assignment</string>
     <string name="search">Search</string>
     <string name="total">Total results:</string>
+    <string name="results">Results</string>
     <string-array name="type_array">
         <item>all</item>
         <item>classroom</item>

@@ -50,7 +50,7 @@ class SearchFragment : BaseFragment(), SearchInteractor.View {
     }
 
     override fun goToResult() {
-        activity?.let { Navigation.findNavController(it,R.id.fragment).navigate(R.id.action_searchFragment_to_resultFragment) }
+        activity?.let { Navigation.findNavController(it,R.id.nav_host_fragment).navigate(R.id.action_searchFragment_to_resultFragment) }
     }
 
     override fun onAttach(context: Context?) {
